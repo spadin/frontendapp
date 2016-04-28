@@ -1,0 +1,14 @@
+version: '2'
+services:
+  frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile.development
+    image: frontendapp-development
+    volumes:
+      - ./src:/var/app/src
+      - ./test:/var/app/test
+      - ./bundle:/var/app/bundle
+      - ./package.json:/var/app/package.json
+      - ./webpack.config.js:/var/app/webpack.config.js
+
