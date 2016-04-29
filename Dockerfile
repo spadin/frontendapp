@@ -8,6 +8,3 @@ COPY package.json $APP_HOME/package.json
 RUN npm install
 
 COPY . $APP_HOME
-
-ENV NODE_ENV production
-CMD npm run webpack
