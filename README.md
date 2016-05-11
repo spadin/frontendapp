@@ -3,53 +3,36 @@
 An example of how to use Docker to drive a Webpack build. No need to locally
 install node, npm, etc.
 
-## Building the image
+## Requirements
 
-This project uses a `Dockerfile` and `Dockerfile.development` to avoid
-re-installing all node modules every time you install just one node module.
-
-### Build the Dockerfile
-
-Will install all the node modules. You shouldn't need to build this one as
-often. You could even have this be built by CI so you don't have to waste
-development time waiting for this image to build.
-
-```
-$ docker build -t spadin/frontendapp .
-```
-
-### Build the Dockerfile.development
-
-This builds on top of the `spadin/frontendapp` image so it should take a lot
-less time to build.
-
-```
-$ docker-compose build frontend
-```
+[Docker Toolbox][1], [Docker Beta][2] or individually install [Docker Engine][3] and [Docker Compose][4].
 
 ## Running tests
 
-Uses the ava test runner.
+```
+$ bin/test
+```
+
+## Run tests and watch for changes
 
 ```
-$ docker/frontend npm test -- --watch --verbose
+$ bin/watch
 ```
 
 ## Build project
 
 ```
-$ docker/frontend npm run webpack
+$ bin/build
 ```
 
-## What's with all the `docker/frontend` commands?
+## More information
 
-Checkout the file at `docker/frontend`
+The point of this project is to make building a frontend project simple. The
+specifics of the commands above are easily accessible, but not necessary to get
+up and running. Simply running those commands will pull and build everything
+you need to get up and running.
 
-```sh
-#! /usr/bin/env sh
-
-docker-compose run --rm frontend $@
-```
-
-All this does is run your command using `docker-compose` in the frontend
-container and removes the container when it's done.
+[1]: https://beta.docker.com/
+[2]: https://www.docker.com/products/docker-toolbox
+[3]: https://www.docker.com/products/docker-engine
+[4]: https://www.docker.com/products/docker-compose
