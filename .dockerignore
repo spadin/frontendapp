@@ -2,6 +2,7 @@
 .git
 Dockerfile*
 README.md
+bin
 bundle
 docker-compose.yml
 node_modules
