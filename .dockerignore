@@ -1,8 +1,8 @@
-.git
-bundle
-node_modules
-npm-debug.log
-docker-compose.yml
 .dockerignore
+.git
 Dockerfile*
 README.md
+bundle
+docker-compose.yml
+node_modules
+npm-debug.log
