@@ -2,6 +2,6 @@ import test from 'ava';
 import Greeter from '../src/greeter';
 
 test('#greet', (t) => {
-  const greeter = new Greeter('Sam');
+  const greeter = new Greeter({name: 'Sam'});
   t.is(greeter.greet(), 'Hello Sam!');
 });
