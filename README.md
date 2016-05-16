@@ -7,16 +7,16 @@ install node, npm, etc.
 
 [Docker Toolbox][1], [Docker Beta][2] or individually install [Docker Engine][3] and [Docker Compose][4].
 
-## Running tests
+## Running specs
 
 ```
-$ bin/test
+$ bin/spec
 ```
 
-## Run tests and watch for changes
+## Run specs and watch for changes
 
 ```
-$ bin/test --watch
+$ bin/spec --watch
 ```
 
 ## Build project
