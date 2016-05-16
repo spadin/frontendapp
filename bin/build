@@ -1,5 +1,7 @@
 #! /usr/bin/env sh
 
+cd "`dirname "$0"`/.."
+
 if [ "$*" == "--watch" ]; then
   watch="-- --watch"
 fi
