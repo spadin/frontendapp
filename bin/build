@@ -1,3 +1,7 @@
 #! /usr/bin/env sh
 
-docker-compose run --rm frontend npm run webpack
+if [ "$*" == "--watch" ]; then
+  watch="-- --watch"
+fi
+
+docker-compose run --rm frontend npm run webpack $watch

@@ -16,13 +16,19 @@ $ bin/test
 ## Run tests and watch for changes
 
 ```
-$ bin/watch
+$ bin/test --watch
 ```
 
 ## Build project
 
 ```
 $ bin/build
+```
+
+## Build project and watch for changes
+
+```
+# bin/build --watch
 ```
 
 ## More information
