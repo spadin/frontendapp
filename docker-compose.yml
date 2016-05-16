@@ -10,5 +10,5 @@ services:
       - ./test:/var/app/test
       - ./bundle:/var/app/bundle
       - ./package.json:/var/app/package.json
-      - ./webpack.config.js:/var/app/webpack.config.js
+      - ./webpack.development.config.js:/var/app/webpack.config.js
 
