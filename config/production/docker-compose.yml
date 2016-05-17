@@ -1,0 +1,9 @@
+version: '2'
+services:
+  frontend:
+    build:
+      context: ../../
+      dockerfile: ./config/production/Dockerfile
+    image: spadin/frontendapp
+    volumes:
+      - ../../bundle:/var/app/bundle

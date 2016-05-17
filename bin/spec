@@ -1,5 +1,9 @@
 #! /usr/bin/env sh
 
-cd "`dirname "$0"`/.."
+compose="`dirname "$0"`/compose"
 
-docker-compose run --rm frontend npm test -- --verbose $1
+if [ "$*" == "--watch" ]; then
+  watch="--watch"
+fi
+
+$compose run --rm frontend npm test -- --verbose $watch

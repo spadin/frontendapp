@@ -1,7 +1,7 @@
-FROM node:6.0.0
+FROM spadin/frontendapp
 
 ENV APP_HOME /var/app
-ENV NODE_ENV production
+ENV NODE_ENV development
 RUN mkdir -p $APP_HOME
 WORKDIR $APP_HOME
 

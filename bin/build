@@ -1,9 +1,9 @@
 #! /usr/bin/env sh
 
-cd "`dirname "$0"`/.."
+compose="`dirname "$0"`/compose"
 
 if [ "$*" == "--watch" ]; then
   watch="-- --watch"
 fi
 
-docker-compose run --rm frontend npm run webpack $watch
+$compose run --rm frontend npm run webpack $watch

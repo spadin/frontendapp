@@ -1,7 +1,7 @@
-FROM spadin/frontendapp
+FROM node:6.0.0
 
 ENV APP_HOME /var/app
-ENV NODE_ENV development
+ENV NODE_ENV production
 RUN mkdir -p $APP_HOME
 WORKDIR $APP_HOME
 
@@ -9,4 +9,4 @@ COPY package.json $APP_HOME/package.json
 RUN npm install
 
 COPY . $APP_HOME
-COPY webpack.development.config.js webpack.config.js
+COPY ./config/production/webpack.config.js webpack.config.js

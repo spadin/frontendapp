@@ -8,6 +8,7 @@ module.exports = {
   resolve: {
     extensions: ['', '.js', '.jsx'],
   },
+  devtool: '#eval',
   module: {
     loaders: [
       {

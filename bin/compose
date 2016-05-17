@@ -1,0 +1,7 @@
+#! /usr/bin/env sh
+
+cd "`dirname "$0"`/.."
+
+ENV=${ENV:-"development"}
+
+docker-compose -f config/$ENV/docker-compose.yml $@
