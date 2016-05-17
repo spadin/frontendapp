@@ -28,7 +28,13 @@ $ bin/build
 ## Build project and watch for changes
 
 ```
-# bin/build --watch
+$ bin/build --watch
+```
+
+## Production builds
+
+```
+$ ENV=production bin/build
 ```
 
 ## More information
