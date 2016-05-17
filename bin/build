@@ -1,9 +1,8 @@
 #! /usr/bin/env sh
 
-compose="`dirname "$0"`/compose"
+source "`dirname "$0"`/functions"
 
-if [ "$*" == "--watch" ]; then
-  watch="-- --watch"
-fi
+setup
 
-$compose run --rm frontend npm run webpack $watch
+compose run --rm frontend \
+  npm run webpack `watch_command $1 -- --watch`
