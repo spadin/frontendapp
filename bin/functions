@@ -1,7 +1,5 @@
 #! /usr/bin/env sh
 
-ENV=${ENV:-"development"}
-
 setup() {
   cd "`dirname "$0"`/.."
 }
