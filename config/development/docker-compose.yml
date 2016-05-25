@@ -6,9 +6,4 @@ services:
       dockerfile: ./config/development/Dockerfile
     image: frontendapp-development
     volumes:
-      - ../../src:/var/app/src
-      - ../../test:/var/app/test
-      - ../../bundle:/var/app/bundle
-      - ../../package.json:/var/app/package.json
-      - ../../config/development/webpack.config.js:/var/app/webpack.config.js
-
+      - ../../:/var/app

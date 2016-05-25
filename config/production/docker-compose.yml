@@ -6,4 +6,4 @@ services:
       dockerfile: ./config/production/Dockerfile
     image: spadin/frontendapp
     volumes:
-      - ../../bundle:/var/app/bundle
+      - ../../:/var/app/
