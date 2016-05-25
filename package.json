@@ -19,10 +19,16 @@
     "webpack-dev-server": "^1.14.1"
   },
   "ava": {
-    "require": ["babel-register"],
+    "require": [
+      "babel-register"
+    ],
     "babel": "inherit"
   },
   "babel": {
-    "presets": ["stage-0", "es2015", "react"]
+    "presets": [
+      "stage-0",
+      "es2015",
+      "react"
+    ]
   }
 }
