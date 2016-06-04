@@ -5,7 +5,23 @@ install node, npm, etc.
 
 ## Requirements
 
-[Docker Toolbox][1], [Docker Beta][2] or individually install [Docker Engine][3] and [Docker Compose][4].
+[Docker Toolbox][2], [Docker Beta][1] or individually install [Docker Engine][3] and [Docker Compose][4].
+
+## Docker Machine Setup
+
+Skip this step if using Docker Beta on running on Linux.
+
+```
+$ docker-machine create --driver=virtualbox frontendapp
+$ eval $(docker-machine env frontendapp)
+```
+
+Next time you restart, you'll need to start the machine and set up your environment.
+
+```
+$ docker-machine start frontendapp
+$ eval $(docker-machine env frontendapp)
+```
 
 ## Running specs
 
