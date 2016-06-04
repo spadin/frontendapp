@@ -1,5 +1,5 @@
 import test from 'ava';
-import Greeter from '../src/greeter';
+import Greeter from '../src/javascript/greeter';
 
 test('#greet', (t) => {
   const greeter = new Greeter({name: 'Sam'});
