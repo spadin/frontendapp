@@ -7,3 +7,6 @@ services:
     image: frontendapp-development
     volumes:
       - ../../:/var/app
+      - node_modules:/var/app/node_modules
+volumes:
+  node_modules: {}

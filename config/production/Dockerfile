@@ -9,4 +9,3 @@ COPY package.json $APP_HOME/package.json
 RUN npm install
 
 COPY . $APP_HOME
-COPY ./config/$NODE_ENV/webpack.config.js webpack.config.js
