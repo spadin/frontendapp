@@ -4,7 +4,8 @@
   "private": true,
   "scripts": {
     "test": "ava",
-    "webpack": "webpack"
+    "webpack": "webpack",
+    "webpack-dev-server": "webpack-dev-server"
   },
   "dependencies": {
     "ava": "^0.14.0",
