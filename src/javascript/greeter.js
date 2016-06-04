@@ -3,11 +3,22 @@ import React from 'react';
 export default class Greeter extends React.Component {
   constructor(props) {
     super(props);
+
+    this.handleChange = this.handleChange.bind(this);
+
+    this.state = {
+      name: props.name,
+    };
+  }
+
+  handleChange(event) {
+    const name = event.currentTarget.value;
+    this.setState({name})
   }
 
   greet() {
-    if(this.props.name) {
-      return `Hello ${this.props.name}!`;
+    if(this.state.name) {
+      return `Hello ${this.state.name}!`;
     }
     else {
       return "Hello World!";
@@ -16,7 +27,10 @@ export default class Greeter extends React.Component {
 
   render() {
     return (
-      <h1>{this.greet()}</h1>
+      <div>
+        <input type="text" onChange={this.handleChange} value={this.state.name}/>
+        <h1>{this.greet()}</h1>
+      </div>
     );
   }
 }
