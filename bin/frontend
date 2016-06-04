@@ -4,4 +4,4 @@ source "`dirname "$0"`/functions"
 
 setup
 
-compose run --rm frontend $@
+docker-compose run --rm frontend $@

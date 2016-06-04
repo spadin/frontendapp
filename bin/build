@@ -4,5 +4,5 @@ source "`dirname "$0"`/functions"
 
 setup
 
-compose run --rm frontend \
+docker-compose run --rm frontend \
   npm run webpack `watch_command $1 -- --watch`

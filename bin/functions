@@ -4,11 +4,6 @@ setup() {
   cd "`dirname "$0"`/.."
 }
 
-compose() {
-  env=${ENV:-"development"}
-  docker-compose -f config/$env/docker-compose.yml $@
-}
-
 watch_command() {
   if [ "$1" == "--watch" ]; then
     echo "${@:2}"
