@@ -1,8 +1,6 @@
 #! /usr/bin/env sh
 
-source "`dirname "$0"`/functions"
-
-setup
+cd "`dirname "$0"`/.."
 
 docker-compose run --rm frontend \
-  npm run webpack `watch_command $1 -- --watch`
+  npm run webpack -- $1

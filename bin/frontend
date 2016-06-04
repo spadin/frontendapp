@@ -1,7 +1,5 @@
 #! /usr/bin/env sh
 
-source "`dirname "$0"`/functions"
-
-setup
+cd "`dirname "$0"`/.."
 
 docker-compose run --rm frontend $@
