@@ -1,4 +1,4 @@
-FROM node:6.0.0
+FROM node:6.2.1
 
 ENV APP_HOME /var/app
 RUN mkdir -p $APP_HOME
