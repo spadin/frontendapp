@@ -3,4 +3,4 @@
 cd "`dirname "$0"`/.."
 
 docker-compose run --rm frontend \
-  npm test -- --verbose $1
+  npm test -- --verbose $@

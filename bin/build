@@ -3,4 +3,4 @@
 cd "`dirname "$0"`/.."
 
 docker-compose run --rm frontend \
-  npm run webpack -- $1
+  npm run webpack -- $@
