@@ -1,4 +1,22 @@
 import path from 'path';
+import webpack from 'webpack';
+
+function getPlugins(env) {
+  const { DefinePlugin, optimize: { UglifyJsPlugin }} = webpack;
+  const plugins = [
+    new DefinePlugin({
+      'process.env': {
+        'NODE_ENV': JSON.stringify(env)
+      }
+    })
+  ];
+
+  if(env === 'production') {
+    plugins.push(new UglifyJsPlugin());
+  }
+
+  return plugins;
+}
 
 export default {
   context: path.resolve(__dirname, 'src'),
@@ -11,7 +29,7 @@ export default {
   resolve: {
     extensions: ['', '.js', '.jsx'],
   },
-  devtool: '#eval',
+  devtool: '#source-map',
   module: {
     loaders: [
       {
@@ -21,4 +39,5 @@ export default {
       }
     ],
   },
+  plugins: getPlugins(process.env.NODE_ENV),
 };
