@@ -2,5 +2,7 @@
 
 cd "`dirname "$0"`/.."
 
-docker-compose run --rm frontend \
-  npm run webpack -- $@
+NODE_ENV=${ENV:-development}
+
+docker-compose run --rm -e NODE_ENV=$NODE_ENV frontend \
+    npm run webpack -- $@
