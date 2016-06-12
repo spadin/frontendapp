@@ -1,0 +1,6 @@
+#! /usr/bin/env sh
+
+cd "`dirname "$0"`/.."
+
+docker-compose run --rm frontend \
+  npm run eslint -- src test $@
