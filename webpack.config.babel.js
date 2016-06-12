@@ -12,7 +12,7 @@ function getPlugins(env) {
   ];
 
   if(env === 'production') {
-    plugins.push(new UglifyJsPlugin());
+    plugins.push(new UglifyJsPlugin({compress: {warnings: false}}));
   }
 
   return plugins;
@@ -23,7 +23,7 @@ export default {
   entry: './javascript/entry.js',
   output: {
     filename: 'app-bundle.js',
-    path: './bundle',
+    path: './dist/bundle',
     publicPath: '/bundle/',
   },
   resolve: {

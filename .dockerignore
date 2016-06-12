@@ -3,7 +3,7 @@
 Dockerfile*
 README.md
 bin
-bundle
+dist
 docker-compose.yml
 node_modules
 npm-debug.log
