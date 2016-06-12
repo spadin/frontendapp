@@ -25,16 +25,16 @@ $ docker-machine start frontendapp
 $ eval $(docker-machine env frontendapp)
 ```
 
-## Running specs
+## Running tests
 
 ```
-$ bin/spec
+$ bin/test
 ```
 
 ## Run specs and watch for changes
 
 ```
-$ bin/spec --watch
+$ bin/test --watch
 ```
 
 ## Running linter
@@ -97,8 +97,7 @@ $ bin/frontend npm install --save left-pad
 
 The point of this project is to make building a frontend project simple. The
 specifics of the commands above are easily accessible, but not necessary to get
-up and running. Simply running those commands will pull and build everything
-you need to get up and running.
+up and running.
 
 [1]: https://beta.docker.com/
 [2]: https://www.docker.com/products/docker-toolbox
