@@ -11,6 +11,6 @@
     }
   },
   "rules": {
-    "no-shadow": ["off"]
+    "no-shadow": [0]
   }
 }
