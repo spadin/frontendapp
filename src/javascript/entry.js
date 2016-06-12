@@ -1,6 +1,6 @@
 import ReactDOM from 'react-dom';
 import React from 'react';
-import Greeter from './greeter/greeter';
+import Greeter from './greeter/Greeter';
 import { Provider } from 'react-redux';
 import { createStore, combineReducers } from 'redux';
 import greeter from './greeter/reducer';

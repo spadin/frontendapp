@@ -1,5 +1,5 @@
 import React, { PropTypes } from 'react';
-import TextInput from './textInput';
+import TextInput from './TextInput';
 import greeting from './greeting';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
