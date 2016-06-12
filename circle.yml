@@ -6,4 +6,4 @@ machine:
     - docker
 test:
   override:
-    - bin/test
+    - docker-compose run frontend npm test -- --verbose
