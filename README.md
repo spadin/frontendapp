@@ -37,6 +37,14 @@ $ bin/spec
 $ bin/spec --watch
 ```
 
+## Running linter
+
+Runs eslint across all JavaScript files in the project.
+
+```
+$ bin/lint
+```
+
 ## Build project
 
 ```
@@ -49,10 +57,40 @@ $ bin/build
 $ bin/build --watch
 ```
 
+## Run webpack-dev-server
+
+```
+$ bin/server
+```
+
+```
+$ open http://localhost:8080
+```
+
+Or, if using Docker Machine
+
+```
+$ open http://$(docker-machine ip frontendapp):8080
+```
+
 ## Production builds
 
 ```
 $ ENV=production bin/build
+```
+
+## Open a bash shell on a container
+
+```
+$ bin/frontend bash
+```
+
+## Install new node module
+
+The `node_modules` directory is a Docker volume so this command will persist the new module and modify `package.json` with the new module dependency.
+
+```
+$ bin/frontend npm install --save left-pad
 ```
 
 ## More information
