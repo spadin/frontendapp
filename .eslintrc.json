@@ -11,6 +11,8 @@
     }
   },
   "rules": {
-    "no-shadow": [0]
+    "no-shadow": [0],
+    "import/no-unresolved": [0],
+    "import/no-duplicates": [0]
   }
 }
