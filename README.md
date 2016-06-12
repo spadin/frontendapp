@@ -1,3 +1,5 @@
+[![Code Climate](https://codeclimate.com/github/spadin/frontendapp/badges/gpa.svg)](https://codeclimate.com/github/spadin/frontendapp)
+
 # Frontend App
 
 An example of how to use Docker to drive a Webpack build. No need to locally
