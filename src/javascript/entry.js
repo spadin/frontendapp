@@ -5,13 +5,13 @@ import { Provider } from 'react-redux';
 import { createStore, combineReducers } from 'redux';
 import greeter from './greeter/reducer';
 
-const reducer = combineReducers({greeter});
+const reducer = combineReducers({ greeter });
 const store = createStore(reducer);
 
 document.addEventListener('DOMContentLoaded', () => {
   ReactDOM.render(
     <Provider store={store}>
-      <Greeter name="Sandro"/>
+      <Greeter name="Sandro" />
     </Provider>,
     document.getElementById('root')
   );

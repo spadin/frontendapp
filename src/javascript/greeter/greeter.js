@@ -1,21 +1,26 @@
-import React from 'react';
+import React, { PropType } from 'react';
 import TextInput from './textInput';
 import greeting from './greeting';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { updateName } from './actions';
 
-const Greeter = ({name, updateName}) => (
+const Greeter = ({ name, updateName }) => (
   <div>
-    <TextInput value={name} onChange={updateName}/>
+    <TextInput value={name} onChange={updateName} />
     <h1>{greeting(name)}</h1>
   </div>
 );
 
+Greeter.propTypes = {
+  name: PropType.string,
+  updateName: PropType.func,
+};
+
 const mapStateToProps = (state) => ({
-  name: state.greeter.name
+  name: state.greeter.name,
 });
 
-const mapDispatchToProps = (dispatch) => ( bindActionCreators({updateName}, dispatch))
+const mapDispatchToProps = (dispatch) => (bindActionCreators({ updateName }, dispatch));
 
 export default connect(mapStateToProps, mapDispatchToProps)(Greeter);

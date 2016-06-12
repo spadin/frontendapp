@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { PropType } from 'react';
 
 export default class TextInput extends React.Component {
   constructor(props) {
@@ -12,7 +12,12 @@ export default class TextInput extends React.Component {
 
   render() {
     return (
-      <input type="text" onChange={this.handleChange} value={this.props.value}/>
+      <input type="text" onChange={this.handleChange} value={this.props.value} />
     );
   }
 }
+
+TextInput.propTypes = {
+  onChange: PropType.func,
+  value: PropType.string,
+};

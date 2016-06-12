@@ -23,7 +23,7 @@ test('add/find gte/lte', (t) => {
 
 test('add/find multiple entries', (t) => {
   const ranges = new Ranges();
-  ranges.add(gte(0), lt(2),  'test-data-1');
+  ranges.add(gte(0), lt(2), 'test-data-1');
   ranges.add(gte(2), lte(3), 'test-data-2');
 
   t.is(ranges.find(2), 'test-data-2');
@@ -31,17 +31,17 @@ test('add/find multiple entries', (t) => {
 });
 
 test('gt', (t) => {
-  t.deepEqual(gt(10), {comparison: GT, point: 10});
+  t.deepEqual(gt(10), { comparison: GT, point: 10 });
 });
 
 test('lt', (t) => {
-  t.deepEqual(lt(10), {comparison: LT, point: 10});
+  t.deepEqual(lt(10), { comparison: LT, point: 10 });
 });
 
 test('gte', (t) => {
-  t.deepEqual(gte(10), {comparison: GTE, point: 10});
+  t.deepEqual(gte(10), { comparison: GTE, point: 10 });
 });
 
 test('lte', (t) => {
-  t.deepEqual(lte(10), {comparison: LTE, point: 10});
+  t.deepEqual(lte(10), { comparison: LTE, point: 10 });
 });

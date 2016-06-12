@@ -3,5 +3,15 @@
     "browser": true,
     "node": true
   },
-  "extends": "airbnb"
+  "extends": "airbnb",
+  "plugins": ["react"],
+  "parserOptions": {
+    "ecmaVersion": 6,
+    "ecmaFeatures": {
+      "experimentalObjectRestSpread": true
+    }
+  },
+  "rules": {
+    "no-shadow": ["off"]
+  }
 }

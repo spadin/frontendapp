@@ -1,19 +1,29 @@
-export const GT  = 'greater-than',
-             LT  = 'less-than',
-             GTE = 'greater-than-or-equal-to',
-             LTE = 'less-than-or-equal-to';
+export const GT = 'greater-than';
+export const LT = 'less-than';
+export const GTE = 'greater-than-or-equal-to';
+export const LTE = 'less-than-or-equal-to';
 
-const compare = (target, {comparison, point}) => {
-  switch(comparison) {
+const compare = (target, { comparison, point }) => {
+  let result;
+
+  switch (comparison) {
     case GT:
-      return target > point;
+      result = target > point;
+      break;
     case LT:
-      return target < point;
+      result = target < point;
+      break;
     case GTE:
-      return target >= point;
+      result = target >= point;
+      break;
     case LTE:
-      return target <= point;
+      result = target <= point;
+      break;
+    default:
+      throw new Error('invalid comparison');
   }
+
+  return result;
 };
 
 export default class Ranges {
@@ -22,19 +32,19 @@ export default class Ranges {
   }
 
   add(start, end, data) {
-    this.ranges.push({start, end, data});
+    this.ranges.push({ start, end, data });
   }
 
   find(target) {
-    const range = this.ranges.find((range) => {
-      return compare(target, range.start) && compare(target, range.end);
-    }) || {};
+    const range = this.ranges.find((range) => (
+      compare(target, range.start) && compare(target, range.end)
+    )) || {};
     return range.data;
   }
 }
 
-const createComparison = (comparison, point) => ({comparison, point});
-export const gt  = (point) => (createComparison(GT,  point));
-export const lt  = (point) => (createComparison(LT,  point));
+const createComparison = (comparison, point) => ({ comparison, point });
+export const gt = (point) => (createComparison(GT, point));
+export const lt = (point) => (createComparison(LT, point));
 export const gte = (point) => (createComparison(GTE, point));
 export const lte = (point) => (createComparison(LTE, point));
