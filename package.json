@@ -6,7 +6,8 @@
     "test": "ava",
     "webpack": "webpack",
     "webpack-dev-server": "webpack-dev-server",
-    "eslint": "eslint"
+    "eslint": "eslint",
+    "eslint:all": "eslint ."
   },
   "dependencies": {
     "ava": "^0.14.0",

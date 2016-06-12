@@ -2,17 +2,17 @@ import path from 'path';
 import webpack from 'webpack';
 
 function getPlugins(env) {
-  const { DefinePlugin, optimize: { UglifyJsPlugin }} = webpack;
+  const { DefinePlugin, optimize: { UglifyJsPlugin } } = webpack;
   const plugins = [
     new DefinePlugin({
       'process.env': {
-        'NODE_ENV': JSON.stringify(env)
-      }
-    })
+        NODE_ENV: JSON.stringify(env),
+      },
+    }),
   ];
 
-  if(env === 'production') {
-    plugins.push(new UglifyJsPlugin({compress: {warnings: false}}));
+  if (env === 'production') {
+    plugins.push(new UglifyJsPlugin({ compress: { warnings: false } }));
   }
 
   return plugins;
@@ -36,7 +36,7 @@ export default {
         test: /\.jsx?$/,
         loader: 'babel',
         exclude: /node_modules/,
-      }
+      },
     ],
   },
   plugins: getPlugins(process.env.NODE_ENV),
