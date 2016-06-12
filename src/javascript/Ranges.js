@@ -1,9 +1,9 @@
 export const GT  = 'greater-than',
              LT  = 'less-than',
              GTE = 'greater-than-or-equal-to',
-             LTE = 'less-than-or-equal-to'
+             LTE = 'less-than-or-equal-to';
 
-const compare = (target, {point, comparison}) => {
+const compare = (target, {comparison, point}) => {
   switch(comparison) {
     case GT:
       return target > point;
@@ -33,7 +33,8 @@ export default class Ranges {
   }
 }
 
-export const gt  = (point) => ({comparison: GT,  point});
-export const lt  = (point) => ({comparison: LT,  point});
-export const gte = (point) => ({comparison: GTE, point});
-export const lte = (point) => ({comparison: LTE, point});
+const createComparison = (comparison, point) => ({comparison, point});
+export const gt  = (point) => (createComparison(GT,  point));
+export const lt  = (point) => (createComparison(LT,  point));
+export const gte = (point) => (createComparison(GTE, point));
+export const lte = (point) => (createComparison(LTE, point));
