@@ -1,4 +1,4 @@
-import React, { PropType } from 'react';
+import React, { PropTypes } from 'react';
 import TextInput from './textInput';
 import greeting from './greeting';
 import { bindActionCreators } from 'redux';
@@ -13,8 +13,8 @@ const Greeter = ({ name, updateName }) => (
 );
 
 Greeter.propTypes = {
-  name: PropType.string,
-  updateName: PropType.func,
+  name: PropTypes.string,
+  updateName: PropTypes.func,
 };
 
 const mapStateToProps = (state) => ({

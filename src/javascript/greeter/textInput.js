@@ -1,4 +1,4 @@
-import React, { PropType } from 'react';
+import React, { PropTypes } from 'react';
 
 export default class TextInput extends React.Component {
   constructor(props) {
@@ -18,6 +18,6 @@ export default class TextInput extends React.Component {
 }
 
 TextInput.propTypes = {
-  onChange: PropType.func,
-  value: PropType.string,
+  onChange: PropTypes.func,
+  value: PropTypes.string,
 };
