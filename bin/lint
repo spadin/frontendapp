@@ -3,4 +3,4 @@
 cd "`dirname "$0"`/.."
 
 docker-compose run --rm frontend \
-  npm run eslint -- src test $@
+  npm run eslint:all
