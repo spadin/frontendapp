@@ -17,8 +17,8 @@ Greeter.propTypes = {
   updateName: PropTypes.func,
 };
 
-const mapStateToProps = (state) => ({
-  name: state.greeter.name,
+const mapStateToProps = (state, ownProps) => ({
+  name: state.greeter.name || ownProps.name,
 });
 
 const mapDispatchToProps = (dispatch) => (bindActionCreators({ updateName }, dispatch));
