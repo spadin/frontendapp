@@ -40,7 +40,4 @@ export default {
     ],
   },
   plugins: getPlugins(process.env.NODE_ENV),
-  devServer: {
-    historyApiFallback: true,
-  },
 };
