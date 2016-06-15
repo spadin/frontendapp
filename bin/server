@@ -4,7 +4,7 @@ cd "`dirname "$0"`/.."
 
 NODE_ENV=${ENV:-development}
 
-docker-compose run --rm -e NODE_ENV=$NODE_ENV --service-ports frontend \
+docker-compose run --rm -e NODE_ENV=$NODE_ENV --publish="8080:8080" frontend \
   npm run webpack-dev-server -- \
     --hot \
     --inline \
