@@ -64,13 +64,13 @@ $ bin/server
 ```
 
 ```
-$ open http://localhost:8080
+$ open https://localhost
 ```
 
 Or, if using Docker Machine
 
 ```
-$ open http://$(docker-machine ip frontendapp):8080
+$ open https://$(docker-machine ip frontendapp)
 ```
 
 ## Production builds
