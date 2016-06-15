@@ -1,4 +1,4 @@
-FROM node:6.2.1
+FROM mhart/alpine-node:6.2.1
 
 ENV APP_HOME /var/app
 RUN mkdir -p $APP_HOME
