@@ -2,5 +2,9 @@
 
 cd "`dirname "$0"`/.."
 
-docker-compose run --rm frontend \
+if [ "$CIRCLE_CI" != "true" ]; then
+  RM="--rm"
+fi
+
+docker-compose run $RM frontend \
   npm test -- --verbose $@

@@ -4,6 +4,8 @@ machine:
     - sudo bash -c "curl -L https://github.com/docker/compose/releases/download/1.7.1/docker-compose-`uname -s`-`uname -m` > /usr/local/bin/docker-compose; chmod +x /usr/local/bin/docker-compose"
   services:
     - docker
+  environment:
+    CIRCLE_CI: true
 test:
   override:
-    - docker-compose run frontend npm test -- --verbose
+    - bin/test
