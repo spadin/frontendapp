@@ -1,0 +1,25 @@
+#! /usr/bin/env sh
+
+if [ "$CIRCLE_CI" != "true" ]; then
+  echo "NOTICE: This script is only meant to run on CircleCI."
+  exit 0;
+fi
+
+
+# Updgrade to Docker version 1.10.0-circleci
+if [ -z "$(docker --version | grep "1.10")" ]; then
+  sudo service docker stop
+  sudo curl -L -o "/usr/bin/docker" 'https://s3-external-1.amazonaws.com/circle-downloads/docker-1.10.0-circleci'
+  echo 'DOCKER_OPTS="-s btrfs -D"' | sudo tee /etc/default/docker
+  echo 'env container=yes' | sudo tee -a /etc/init/docker.conf
+  sudo service docker start
+fi
+
+BIN_DIR=/home/ubuntu/.local/bin
+mkdir -p $BIN_DIR
+
+# Upgrade Docker Compose
+if [ ! -f "$BIN_DIR/docker-compose" ]; then
+  sudo curl -L https://github.com/docker/compose/releases/download/1.7.1/docker-compose-`uname -s`-`uname -m` > "$BIN_DIR/docker-compose"
+  sudo chmod +x "$BIN_DIR/docker-compose"
+fi
