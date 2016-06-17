@@ -2,7 +2,7 @@
 
 cd "`dirname "$0"`/.."
 
-if [ "$CIRCLE_CI" != "true" ]; then
+if [ -z "$CIRCLE_CI" ]; then
   RM="--rm"
 fi
 

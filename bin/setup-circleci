@@ -1,6 +1,6 @@
 #! /usr/bin/env sh
 
-if [ "$CIRCLE_CI" != "true" ]; then
+if [ -z "$CIRCLE_CI" ]; then
   echo "NOTICE: This script is only meant to run on CircleCI."
   exit 0;
 fi
