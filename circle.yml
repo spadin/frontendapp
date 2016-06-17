@@ -9,3 +9,4 @@ dependencies:
 test:
   override:
     - bin/test
+    - bin/lint
