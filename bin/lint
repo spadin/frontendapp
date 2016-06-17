@@ -2,5 +2,9 @@
 
 cd "`dirname "$0"`/.."
 
-docker-compose run --rm frontend \
+if [ -z "$CIRCLE_CI" ]; then
+  RM="--rm"
+fi
+
+docker-compose run $RM frontend \
   npm run eslint:all
