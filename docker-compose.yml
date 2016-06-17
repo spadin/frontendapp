@@ -16,16 +16,14 @@ services:
         --inline
         --host=0.0.0.0
         --https
-        --cert=/var/app/nginx/server.crt
-        --key=/var/app/nginx/server.key
         --port=443
         --content-base=dist
         --history-api-fallback
   server:
-    image: nginx:1.11-alpine
-    volumes:
-      - ./nginx/default.conf:/etc/nginx/conf.d/default.conf
-      - ./nginx/:/etc/nginx/ssl/
+    build:
+      context: ./nginx
+      dockerfile: Dockerfile
+    image: spadin/nginx-alpine-ssl
     depends_on:
       - frontend
     ports:
