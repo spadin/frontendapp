@@ -1,6 +1,6 @@
 import test from 'ava';
 import Ranges, { gt, lt, gte, lte,
-                 GT, LT, GTE, LTE } from '../src/javascript/Ranges';
+                 GT, LT, GTE, LTE } from '../../src/javascript/lib/Ranges';
 
 test('add/find gt/lt', (t) => {
   const ranges = new Ranges();
