@@ -1,0 +1,9 @@
+#! /usr/bin/env sh
+
+if [ -z "$CIRCLE_CI" ]; then
+  echo "NOTICE: This script is only meant to run on CircleCI."
+  exit 0;
+fi
+
+docker-compose run frontend npm run nyc -- report --reporter=lcov
+docker-compose run frontend npm run codeclimate-test-reporter < coverage/lcov.info

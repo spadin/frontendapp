@@ -5,11 +5,10 @@ machine:
     CIRCLE_CI: true
 dependencies:
   pre:
-    - bin/setup-circleci
+    - bin/circleci/setup
 test:
   override:
     - bin/test
     - bin/lint
   post:
-    - docker-compose run frontend npm run nyc -- report --reporter=lcov
-    - docker-compose run frontend npm run codeclimate-test-reporter < coverage/lcov.info
+    - bin/circleci/send-coverage
