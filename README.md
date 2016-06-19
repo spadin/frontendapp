@@ -1,4 +1,5 @@
 [![Code Climate](https://codeclimate.com/github/spadin/frontendapp/badges/gpa.svg)](https://codeclimate.com/github/spadin/frontendapp)
+[![Code Coverage](https://codeclimate.com/github/spadin/frontendapp/badges/coverage.svg)](https://codeclimate.com/github/spadin/frontendapp)
 [![CircleCI](https://circleci.com/gh/spadin/frontendapp/tree/master.svg?style=shield&circle-token=a3e71e5344d38da268fef3762da1149158a368c2)](https://circleci.com/gh/spadin/frontendapp/tree/master)
 
 # Frontend App
