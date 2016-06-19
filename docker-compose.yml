@@ -10,6 +10,7 @@ services:
       - node_modules:/var/app/node_modules
     environment:
       - NODE_ENV=development
+      - CODECLIMATE_REPO_TOKEN=ebda3d08f5bc1a97600c6d570f02d157b7c6d4f0350f5d0cc50c8c724182fd00
     command: >
       npm run webpack-dev-server --
         --hot
