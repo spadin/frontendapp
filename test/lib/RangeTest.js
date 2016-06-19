@@ -30,6 +30,13 @@ test('add/find multiple entries', (t) => {
   t.is(ranges.find(3), 'test-data-2');
 });
 
+test('invalid comparison throws an error', (t) => {
+  const ranges = new Ranges();
+  ranges.add({ comparison: 'INVALID', point: 2 }, { comparison: 'INVALID', point: 3 }, 'test-data');
+
+  t.throws(() => { ranges.find(2); }, 'invalid comparison');
+});
+
 test('gt', (t) => {
   t.deepEqual(gt(10), { comparison: GT, point: 10 });
 });
