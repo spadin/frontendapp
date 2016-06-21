@@ -1,14 +1,15 @@
 import React, { PropTypes } from 'react';
-import Greeter from './greeter/Greeter';
+import Navigation from './Navigation';
 
-const App = ({ params: { name } }) => (
-  <Greeter name={name} />
+const App = ({ children }) => (
+  <div>
+    <Navigation />
+    {children}
+  </div>
 );
 
 App.propTypes = {
-  params: PropTypes.shape({
-    name: PropTypes.string,
-  }),
+  children: PropTypes.node,
 };
 
 export default App;
