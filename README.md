@@ -9,7 +9,7 @@ install node, npm, etc.
 
 ## Requirements
 
-[Docker Beta][1]
+[Docker][1]
 
 ## Running tests
 
@@ -79,4 +79,4 @@ The point of this project is to make building a frontend project simple. The
 specifics of the commands above are easily accessible, but not necessary to get
 up and running.
 
-[1]: https://beta.docker.com/
+[1]: https://docker.com/getdocker
